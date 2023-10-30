@@ -1,0 +1,18 @@
+{% if url_list %}
+    <table>
+        <tr>
+            <th style="text-align:left;">Smol Url</th>
+            <th style="text-align:left;">Long Url</th>
+        </tr>
+    {% for iter_url in url_list %}
+    <tr>
+        <td><a href="/urls/{{ iter_url.short_url }}">{{ iter_url.short_url }}</a></td>
+        <td><div href="{{ iter_url.long_url }}">{{ iter_url.long_url }}</div></td>
+    </tr>
+    {% endfor %}
+    </table>
+    {% else %}
+    <p>No urls are available.</p>
+    {% endif %}
+    <br>
+<a href="/newPath">generate new url</a>
